@@ -1,7 +1,7 @@
 
 
 
-export const removeUsersFromLocalStorage =()=>{
+export const removeUsers =()=>{
       localStorage.removeItem("users");
       location.reload()
 }

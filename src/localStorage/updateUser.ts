@@ -1,6 +1,6 @@
 import { Role, User } from "../script";
 
-export const updateUserType = (id: string, role: Role) => {
+export const updateUserRole = (id: string, role: Role) => {
   const users: User[] = JSON.parse(localStorage.getItem("users") || "[]");
 
   const updatedUsers = users.map(user => {

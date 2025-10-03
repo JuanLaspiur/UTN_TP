@@ -1,9 +1,7 @@
-import { updateUserType } from "../localStorage/updateUser.js";
-import { Role, User } from "../script";
+import { HTMLZoneElements } from "../eventListeners/htmlElement";
+import {  User } from "../script";
 
-const administradorDropZone = document.getElementById("Administrador");
-const editorDropZone = document.getElementById("Editor");
-const lectorDropZone = document.getElementById("Lector");
+const [adminZone, editorZone, lectorZone]= HTMLZoneElements();
 
 export const renderCardUsers = (users: User[]) => {
     users.forEach(user => {
@@ -15,33 +13,15 @@ export const renderCardUsers = (users: User[]) => {
 
         switch (user.role) {
             case "Administrador":
-                administradorDropZone!.appendChild(userCard);
+                adminZone!.appendChild(userCard);
                 break;
             case "Editor":
-                editorDropZone!.appendChild(userCard);
+                editorZone!.appendChild(userCard);
                 break;
             case "Lector":
-                lectorDropZone!.appendChild(userCard);
+                lectorZone!.appendChild(userCard);
                 break;
         }
     });
 }
 
-[administradorDropZone, editorDropZone, lectorDropZone].forEach(zone => {
-  zone?.addEventListener("dragover", (e) => {
-    e.preventDefault(); // necesario para permitir el drop
-  });
-
-  zone?.addEventListener("drop", (e) => {
-    e.preventDefault();
-
-    const userId = e.dataTransfer?.getData("user-id");
-    const dropZone = e.currentTarget as HTMLElement;
-
-    console.log("Se soltó userId:", userId, "en zona:", dropZone.id);
-
-    if (userId) {
-      updateUserType(userId, dropZone.id as Role);
-    }
-  });
-});

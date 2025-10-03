@@ -4,20 +4,20 @@ const nameInput = document.getElementById("name") as HTMLInputElement;
 const emailInput = document.getElementById("email") as HTMLInputElement;
 
 
-const resetFormFields = () => {
+const resetFormFields = ():void => {
     nameInput.value = '';
     emailInput.value = '';
     location.reload()
 }
 
-const addUserToLocalStorage = (user: User) => {
+const addUserToLocalStorage = (user: User):void => {
     const users = JSON.parse(localStorage.getItem("users") || "[]");
     users.push(user);
     localStorage.setItem("users", JSON.stringify(users));
 }
 
 
-export const handleAddUser = (event: MouseEvent) => {
+export const AddUser = (event: MouseEvent):void => {
     event.preventDefault();
     const name = nameInput.value;
     const email = emailInput.value;
