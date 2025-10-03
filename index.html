@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gestión de Usuarios</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <h1>Gestión de Usuarios</h1>
+
+  <form id="userForm">
+    <input type="text" id="name" placeholder="Nombre" required minlength="3">
+    <input type="email" id="email" placeholder="Email" required>
+    <button id="addButton" type="submit">Agregar</button>
+    <button id="clean" type="reset">Limpiar</button>
+  </form>
+
+  <div class="container">
+    <div id="Administrador" class="dropzone">
+      <h3>Administradores</h3>
+    </div>
+    <div id="Editor" class="dropzone">
+      <h3>Editores</h3>
+    </div>
+    <div id="Lector" class="dropzone">
+      <h3>Lectores</h3>
+    </div>
+  </div>
+
+  <script type="module" src="dist/script.js"></script>
+</body>
+
+</html>
