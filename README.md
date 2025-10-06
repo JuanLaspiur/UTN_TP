@@ -17,7 +17,9 @@ Proyecto final en TypeScript que gestiona usuarios y roles con drag & drop y alm
 1. Clonar el repositorio:
 
 ```bash
-git clone <url-del-repo>
+git clone <https://github.com/JuanLaspiur/UTN_TP>
+
+Node Versión 22.16.0
 
 npm install
 
